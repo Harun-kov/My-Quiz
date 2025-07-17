@@ -1,0 +1,50 @@
+questions = ("How long is the Nile River?: ",
+             "How many bones are in our body?: ",
+             "What is the biggest Mound on Earth?: ",
+             "How many Oscars did the Film Titanic won?: ",
+             "When did the Second World War begin?: ")
+
+options = (("A. 6650km", "B. 6600km", "C. 7000km", "D. 12000km"),
+           ("A. 200", "B. 300", "C. 206", "D. 227"),
+           ("A. Mount Fuji", "B. K2", "C. Mount Everest", "D. Zugspitze"),
+           ("A. 10", "B. 11", "C. 7", "D. 15"),
+           ("A. 1941", "B. 1937", "C. 1945", "D. 1939"))
+
+answers = ("A","C","C","B","D")
+guesses = []
+score = 0
+question_num = 0
+
+for question in questions:
+    print("--------------------------")
+    print(question)
+    for option in options [question_num]:
+      print(option)
+
+    guess = input("Enter (A, B, C, D): ").upper()
+    guesses.append(guess)
+    if guess == answers [question_num]:
+        score += 1
+        print("CORRECT")
+    else:
+        print("INCORRECT")
+        print(f"{answers [question_num]} is correct")
+
+    question_num += 1
+
+print("--------------------------")
+print("         RESULTS          ")
+print("--------------------------")
+
+print("answers: ", end="")
+for answer in answers:
+    print( answer , end=" ")
+print()
+
+print("guesses: ", end="")
+for guess in guesses:
+    print( guess, end=" ")
+print()
+
+score = int(score/len(questions)* 100)
+print(f"Your Score is {score}%")
